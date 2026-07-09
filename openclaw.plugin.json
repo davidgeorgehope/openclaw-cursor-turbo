@@ -1,0 +1,18 @@
+{
+  "id": "cursor-turbo",
+  "name": "Cursor Turbo (ACP + SDK)",
+  "description": "Experimental low-latency Cursor backends: persistent agent acp transport (cursor-acp) and in-process @cursor/sdk transport (cursor-sdk) behind a warm daemon",
+  "cliBackends": ["cursor-acp", "cursor-sdk"],
+  "setup": {
+    "cliBackends": ["cursor-acp", "cursor-sdk"],
+    "requiresRuntime": false
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "openclaw-cursor-turbo",
+  "version": "0.1.0",
+  "description": "Experimental low-latency OpenClaw backends for Cursor: persistent ACP server and @cursor/sdk transports behind a warm daemon",
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"test/*.test.mjs\"",
+    "bench": "node scripts/bench.mjs"
+  },
+  "dependencies": {
+    "@cursor/sdk": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidgeorgehope/openclaw-cursor-turbo.git"
+  },
+  "license": "MIT",
+  "openclaw": {
+    "extensions": ["./index.js"],
+    "compat": {
+      "pluginApi": ">=2026.5.12"
+    }
+  },
+  "files": ["index.js", "lib", "bin", "openclaw.plugin.json"]
+}
