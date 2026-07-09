@@ -14,12 +14,12 @@ daemon alive and exposes two transports as separate CLI backends:
 
 | Transport | Fresh turn | Resumed turn |
 | --- | --- | --- |
-| spawn (`cursor-agent -p`) | 4.6s | 4.2s |
-| ACP (warm daemon) | 6.5s | **2.2s** |
+| spawn (`cursor-agent -p`) | 4.2s | 3.9s |
+| ACP (warm daemon) | 3.7s | **1.8s** |
+| SDK (warm daemon) | 3.0s | 2.2s |
 
-Fresh ACP turns pay for `session/new` on top of daemon startup, but resumed
-turns — which is what a chat assistant does all day — are roughly twice as
-fast as re-spawning the CLI.
+Resumed turns — which is what a chat assistant does all day — are roughly
+twice as fast as re-spawning the CLI.
 
 ## Architecture
 
@@ -101,4 +101,3 @@ Experimental. Known gaps vs openclaw-cursor-agent:
 - No `/cursor`-style chat command, model catalog provider, or media
   understanding provider.
 - The ACP transport ignores per-model effort variants (see above).
-- SDK transport is untested end to end until an API key is configured.
